@@ -1,5 +1,5 @@
 package LINNET.webcore.model;
 
-public interface LinCommands {
+public interface LinCommands  {
     public void getCommand();
 }
