@@ -1,7 +1,32 @@
 package LINNET.webcore.service.repository;
 
+
+import jakarta.annotation.PostConstruct;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
+import java.util.logging.Logger;
+
 @Repository
-public class AuthRepository {
+public class AuthRepository  {
+    private DataSource dataSource;
+    private final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AuthRepository.class.getName());
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public AuthRepository(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @PostConstruct
+    public void tryConnection(){
+        try {
+            logger.info("DB connected");
+            dataSource = jdbcTemplate.getDataSource();
+        }
+        catch (Exception e){
+            logger.info("ERROR created by DB connection");
+        }
+    }
 }

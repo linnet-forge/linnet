@@ -1,0 +1,37 @@
+.mainFont{
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color:white;
+}
+
+.supportFont{
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  color:white;
+}
+
+.hat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body{
+    background-color:#242426;
+}
+
+.top-bar{
+    background-color:#161617;
+    height: 120px;
+    width: 100%;
+}
+
+.auth{
+      display: flex;
+      justify-content: right;
+      align-items: right;
+}
