@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ## PROPERTIES ##
-**/application.properties
 application.properties
 config.json
+.env
