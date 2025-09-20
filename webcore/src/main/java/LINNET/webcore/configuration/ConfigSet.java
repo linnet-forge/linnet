@@ -1,11 +1,8 @@
-package LINNET.configuration;
+package LINNET.webcore.configuration;
 
-import org.hibernate.cfg.Environment;
-import org.json.JSONObject;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.logging.Logger;
@@ -15,7 +12,7 @@ public class ConfigSet {
     Logger logger = Logger.getLogger(ConfigSet.class.getName());
 
     private BufferedReader bufferedReaderENV = new BufferedReader(new FileReader(
-            "D:/linnet/webcore/src/main/java/LINNET/configuration/.env"
+            "D:/linnet/webcore/src/main/java/LINNET/webcore/configuration/.env"
     ));
     private BufferedWriter bufferedWriterPROP = new BufferedWriter(
             new FileWriter("src/main/resources/application.properties"
