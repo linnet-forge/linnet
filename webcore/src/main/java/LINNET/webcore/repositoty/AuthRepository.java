@@ -1,4 +1,4 @@
-package LINNET.webcore.service.repository;
+package LINNET.webcore.repositoty;
 
 
 import jakarta.annotation.PostConstruct;
@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.util.logging.Logger;
 
 @Repository
 public class AuthRepository  {
