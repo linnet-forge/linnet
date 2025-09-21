@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/main.js"></script>
+    <title>Home</title>
+</head>
+<body>
+
+<span th:insert="~{fragments :: homeButton}">
+    </span>
+
+<div class="hat">
+    <h1 class="mainFont"> Login page </h1>
+</div>
+
+<span th:insert="~{fragments :: infoDefault}">
+    </span>
+
+<div class="logForm">
+    <h2>login</h2>
+    <form method="post" action="/login">
+        <input type="text" id="username">
+        <input type="password" id="password">
+        <button type="submit"></button>
+    </form>
+</div>
+
+</body>
+</html>

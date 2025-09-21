@@ -1,10 +1,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-
     <div class="info" th:fragment="infoDefault">
         <h4 class="supportFont">
-            This site is based on VR core LIN
+
         </h4>
     </div>
 
@@ -12,9 +11,14 @@
         <form method="get" action="/login">
             <button type="submit" class="authButton">login</button>
         </form>
-        <form method="get" action="/registration">
+        <form method="get" action="/reg">
             <button type="submit" class="authButton">registration</button>
         </form>
     </div>
 
+    <div id="homeButton" th:fragment="homeButton">
+        <form method="get" action="/home">
+            <button type="submit">home</button>
+        </form>
+    </div>
 </html>
