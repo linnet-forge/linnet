@@ -12,6 +12,11 @@ public class AuthRepository  {
     private DataSource dataSource;
     private final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AuthRepository.class.getName());
 
+    public final String[] ADMIN = {"ADMIN","ADMIN"};
+        public boolean checkAdmin(String username, String password){
+            return (username.equals(ADMIN[0]) && password.equals(ADMIN[1]));
+        }
+
     private final JdbcTemplate jdbcTemplate;
 
     public AuthRepository(JdbcTemplate jdbcTemplate){
