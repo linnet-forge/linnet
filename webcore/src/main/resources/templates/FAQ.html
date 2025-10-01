@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <script src="/js/main.js"></script>
+  <title>Home</title>
+</head>
+<body>
+
+
+<header class="hat">
+    <h1 class="mainFont"> FAQ page </h1>
+    <span th:insert="~{fragments :: auth}">
+        </span>
+</header>
+
+<div class="newRepo">
+    <span th:if="${session.user}">
+        <form method="get" action="/newrepo">
+            <button type="submit">new repo</button>
+        </form>
+    </span>
+</div>
+
+<div class="getRepo">
+    <span th:if="${session.user}">
+        <form method="get" action="/getrepo">
+            <button type="submit">all repos</button>
+        </form>
+    </span>
+</div>
+
+</body>
+</html>

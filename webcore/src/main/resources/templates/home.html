@@ -8,19 +8,12 @@
 </head>
 <body>
 
-<span th:insert="~{fragments :: homeButton}">
-    </span>
 
-    <span th:insert="~{fragments :: auth}">
-    </span>
-
-    <div class="hat">
+    <header class="hat">
         <h1 class="mainFont"> Home page </h1>
-    </div>
-
-    <span th:insert="~{fragments :: infoDefault}">
-    </span>
-
+        <span th:insert="~{fragments :: auth}">
+        </span>
+    </header>
 
 </body>
 </html>
