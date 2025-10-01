@@ -1,24 +1,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <div class="info" th:fragment="infoDefault">
-        <h4 class="supportFont">
-
-        </h4>
-    </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <div class="auth" th:fragment="auth">
+        <form method="get" action="/home">
+            <button type="submit" >home</button>
+        </form>
         <form method="get" action="/login">
             <button type="submit" class="authButton">login</button>
         </form>
         <form method="get" action="/reg">
             <button type="submit" class="authButton">registration</button>
         </form>
-    </div>
-
-    <div id="homeButton" th:fragment="homeButton">
-        <form method="get" action="/home">
-            <button type="submit">home</button>
+        <form method="get" action="/FAQ">
+            <button type="submit" class="authButton">FAQ</button>
         </form>
     </div>
+
+
 </html>

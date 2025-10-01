@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <script src="/js/main.js"></script>
+  <title>New Repo</title>
+</head>
+<body>
+
+
+<div class="hat">
+    <h1 class="mainFont"> Home page </h1>
+</div>
+
+<span th:insert="~{fragments :: auth}">
+    </span>
+
+      <div class="newRepoBlock">
+        <form method="post" action="newrepo">
+          <input type="text" placeholder="Name" name="reponame">
+          <button type="submit">ok</button>
+        </form>
+      </div>
+
+    <span th:insert="~{fragments :: infoDefault}">
+    </span>
+
+
+</body>
+</html>
