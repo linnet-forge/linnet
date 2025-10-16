@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <script src="/js/main.js"></script>
-  <title>New Repo</title>
+    <meta charset="UTF-8">
+    <title>New Repo</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="snow"></div>
 
+<header class="hat">
+    <h1 class="mainFont">New Repository</h1>
+</header>
 
-<div class="hat">
-    <h1 class="mainFont"> Home page </h1>
-</div>
+<span th:insert="~{fragments :: auth}"></span>
 
-<span th:insert="~{fragments :: auth}">
-    </span>
-
-      <div class="newRepoBlock">
-        <form method="post" action="newrepo">
-          <input type="text" placeholder="Name" name="reponame">
-          <button type="submit">ok</button>
+<main class="form-container">
+    <div class="form-block">
+        <h2 class="form-title">Create new repository</h2>
+        <form method="post" action="/newrepo">
+            <input type="text" name="reponame" placeholder="Repository name" required>
+            <button type="submit" class="okLogin">Create</button>
         </form>
-      </div>
+    </div>
+</main>
 
-    <span th:insert="~{fragments :: infoDefault}">
-    </span>
-
-
+<span th:insert="~{fragments :: infoDefault}"></span>
 </body>
 </html>

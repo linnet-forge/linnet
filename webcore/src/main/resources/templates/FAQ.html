@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <script src="/js/main.js"></script>
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<div class="snow"></div>
 
 <header class="hat">
-    <h1 class="mainFont"> FAQ page </h1>
-    <span th:insert="~{fragments :: auth}">
-        </span>
+    <h1 class="mainFont">FAQ Page</h1>
+    <span th:insert="~{fragments :: auth}"></span>
 </header>
 
-<div class="newRepo">
-    <span th:if="${session.user}">
-        <form method="get" action="/newrepo">
-            <button type="submit">new repo</button>
-        </form>
-    </span>
-</div>
-
-<div class="getRepo">
-    <span th:if="${session.user}">
-        <form method="get" action="/getrepo">
-            <button type="submit">all repos</button>
-        </form>
-    </span>
-</div>
-
+<main class="faq-container">
+    <div class="faq-block">
+        <h2 class="faq-title">Quick Access</h2>
+        <div class="faq-buttons">
+                <span th:if="${session.user}">
+                    <form method="get" action="/newrepo">
+                        <button type="submit">New Repo</button>
+                    </form>
+                    <form method="get" action="/getrepo">
+                        <button type="submit">All Repos</button>
+                    </form>
+                </span>
+        </div>
+        <div class="faq-content">
+            <h3>About this section</h3>
+            <p>This page will contain frequently asked questions and answers.</p>
+            <p>Information will be updated as the project evolves.</p>
+        </div>
+    </div>
+</main>
 </body>
 </html>
