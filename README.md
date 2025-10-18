@@ -5,7 +5,7 @@ It serves as an experimental wrapper for a future web service inspired by GitHub
 The main goal of the project is to learn and practice backend service architecture and gain first-hand experience in frontend development.
 
 ## Preview
-![Linnet Home Preview](https://github.com/user-attachments/assets/8045f165-f92a-473f-9228-32db91217c29)
+![Linnet Home Preview](https://github.com/linnet-forge/linnet/blob/main/Linnet.png)
 
 ##  Project Goals
 - Learn to design and implement a multi-layer backend architecture (`controller → service → repository`)
@@ -13,6 +13,9 @@ The main goal of the project is to learn and practice backend service architectu
 - Build a foundation for a service-oriented backend
 - Develop basic frontend structure and interaction with the API
 - Create a personal platform inspired by GitHub’s core functionality
+
+- ## Our team
+![Linnet Home Preview](https://github.com/linnet-forge/linnet/blob/main/Linnet2.png)
 
 ## Current State
 At this stage, Linnet is a structural wrapper around a simple web service prototype.  
