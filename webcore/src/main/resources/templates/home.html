@@ -13,14 +13,47 @@
 <div class="snow"></div>
 
 <header class="hat">
-    <h1 class="mainFont">Home Page</h1>
+    <h1 class="mainFont">LINNET</h1>
     <span th:insert="~{fragments :: auth}"></span>
 </header>
 
 <main class="feed">
-    <div class="feed-container">
-        <div class="feed-item">Future content placeholder</div>
+    <div class="errorHandler">
+            <script th:if="${noSuchAccount}">
+                alert("Invalid name")
+            </script>
     </div>
+    <div class="feed-container">
+        <div class="feed-item-1">
+            <h3>Linnet</h3>
+            <p>Web application built with Java Spring Boot. Currently in development — features coming soon.</p>
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Web App</span>
+        </div>
+    </div>
+
+    <div class="feed-container">
+        <div class="feed-item-1">
+            <h3>Repository Overview</h3>
+            <p>Codebase structure and module organization preview. ReadMe and setup guide will be added later.</p>
+            <span class="tag">Documentation</span>
+            <span class="tag">Setup</span>
+            <span class="tag">Guide</span>
+        </div>
+    </div>
+
+    <div class="feed-container">
+        <div class="feed-item-1">
+            <h3>Upcoming Features</h3>
+            <p>Placeholder for upcoming commits and changelogs. Stay tuned for more updates.</p>
+            <span class="tag">Changelog</span>
+            <span class="tag">Preview</span>
+            <span class="tag">Development</span>
+        </div>
+    </div>
+
+
 </main>
 </body>
 </html>

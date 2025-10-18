@@ -3,14 +3,20 @@ package LINNET.webcore.controller.web;
 import LINNET.webcore.service.repositoty.AccountRepository;
 import LINNET.webcore.service.repositoty.RepoRepository;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.logging.Logger;
 
 @Controller
 public class WebController {
+
+    Logger logger = Logger.getLogger(WebController.class.getName());
 
     private final AccountRepository accountRepository;
     private final RepoRepository repoRepository;
@@ -40,11 +46,19 @@ public class WebController {
     @PostMapping("login")
     public String login_post(
             @RequestParam("username") String username,
-            @RequestParam("password") String password)
+            @RequestParam("password") String password,
+            Model page,
+            RedirectAttributes redirectAttributes
+    )
     {
-        if (accountRepository.getLogin(username,password) != null){
-            httpSession.setAttribute("user",username);
-            return "redirect:/home";
+        try {
+            if (accountRepository.getLogin(username,password) != null){
+                httpSession.setAttribute("user",username);
+            }
+        }catch (EmptyResultDataAccessException e){
+            logger.warning("NO SUCH ACCOUNT");
+            redirectAttributes.addFlashAttribute("noSuchAccount",true);
+
         }
         return "redirect:/home";
     }
@@ -52,8 +66,16 @@ public class WebController {
     @PostMapping("reg")
     public String reg_post(
             @RequestParam("username") String username,
-            @RequestParam("password") String password)
+            @RequestParam("password") String password,
+            @RequestParam("email") String email
+    )
     {
+        try {
+            accountRepository.getAccountByName(username);
+        }catch (EmptyResultDataAccessException e){
+            accountRepository.createAccount(username,password,email);
+            httpSession.setAttribute("user",username);
+        }
         return "redirect:/home";
     }
 

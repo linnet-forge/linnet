@@ -1,6 +1,7 @@
 package LINNET.webcore.service.repositoty;
 
 import LINNET.webcore.model.Account;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -20,44 +21,44 @@ public class AccountRepository {
     }
 
     public void createAccount(String username,String password, String email){
-        var SQL = "INSERT INTO accounts (username,email,password) VALUES(?,?,?)";
-        driver.update(SQL,username,email,password);
+        var SQL = "INSERT INTO account (username,password,email) VALUES(?,?,?)";
+        driver.update(SQL,username,password,email);
     }
 
     public List<Account> getAllAccounts(){
-        var SQL = "SELECT * FROM accounts";
+        var SQL = "SELECT * FROM account";
         RowMapper<Account> mapper = (r,i)->{
             Account account = new Account();
             account.setId(r.getBigDecimal("id"));
             account.setUsername(r.getString("username"));
-            account.setEmail(r.getString("email"));
             account.setPassword(r.getString("password"));
+            account.setEmail(r.getString("email"));
             return account;
         };
         return driver.query(SQL,mapper);
     }
 
     public Account getAccountByName(String username){
-        var SQL = "SELECT * FROM accounts WHERE username = ?";
+        var SQL = "SELECT * FROM account WHERE username = ?";
         RowMapper<Account> mapper = (r,i)->{
             Account account = new Account();
             account.setId(r.getBigDecimal("id"));
             account.setUsername(r.getString("username"));
-            account.setEmail(r.getString("email"));
             account.setPassword(r.getString("password"));
+            account.setEmail(r.getString("email"));
             return account;
         };
         return driver.queryForObject(SQL,mapper,username);
     }
 
-    public Account getLogin(String username,String password){
-        var SQL = "SELECT * FROM accounts WHERE username = ? and password = ?";
+    public Account getLogin(String username,String password) throws EmptyResultDataAccessException {
+        var SQL = "SELECT * FROM account WHERE username = ? and password = ?";
         RowMapper<Account> mapper = (r,i)->{
             Account account = new Account();
             account.setId(r.getBigDecimal("id"));
             account.setUsername(r.getString("username"));
-            account.setEmail(r.getString("email"));
             account.setPassword(r.getString("password"));
+            account.setEmail(r.getString("email"));
             return account;
         };
         return driver.queryForObject(SQL,mapper,username,password);
