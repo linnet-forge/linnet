@@ -22,6 +22,8 @@ At this stage, Linnet is a structural wrapper around a simple web service protot
 The backend is implemented with Spring Boot and connected to a database.  
 The project will later be integrated with the core system called **Lin**, which will handle most of the internal logic and API operations.
 
+![Linnet Home Preview](https://github.com/linnet-forge/linnet/blob/main/testing.png)
+
 ## Technologies
 Backend - Java 17+, Spring Boot, Spring Data JPA 
 Frontend - HTML, CSS, JavaScript, Thymeleaf 
